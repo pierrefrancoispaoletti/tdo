@@ -20,6 +20,17 @@ const ItemElement = ({ endpoint, title, MenuComponent }) => {
     setCategories('');
     setItemsByCategory([]);
   }, [endpoint]);
+
+  useEffect(() => {
+    if (categories) {
+      const newContenant = items.filter((item) => item.meta.Couleur.includes(categories));
+      setItemsByCategory(newContenant);
+    }
+    else {
+      setItemsByCategory(items);
+    }
+  }, [categories, items]);
+
   useEffect(() => {
     setMounted(true);
     setLoading(true);
