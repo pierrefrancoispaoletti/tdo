@@ -12,6 +12,7 @@ import BurgerMenu from '../BurgerMenu/BurgerMenu';
 // == Import
 import './app.scss';
 import Main from '../Main/Main';
+import BackHomeButton from '../BackHomeButton/BackHomeButton';
 
 const App = () => {
   // cleaning the localStorage' on first rendering of
@@ -48,6 +49,7 @@ const App = () => {
         <Divider hidden />
         <Footer />
       </BurgerMenu>
+      <BackHomeButton />
     </div>
   );
 };
