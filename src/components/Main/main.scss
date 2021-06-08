@@ -1,0 +1,21 @@
+.main {
+  margin-top: 5em !important;
+  display: flex !important;
+  justify-content: center !important;
+  flex-wrap: wrap;
+  flex-grow: 0.8;
+  & .icons {
+    width: 140px;
+    text-align: center;
+    display: inline-block;
+    padding: 0.5em;
+    margin: 0.2em;
+    border: 2px solid white;
+    background-color: inherit;
+    border-radius: 8px;
+    & .header {
+      display: block;
+      margin-bottom: 0.8em;
+    }
+  }
+}

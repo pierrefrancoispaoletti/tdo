@@ -43,7 +43,7 @@ const CuisineMenu = ({
       }}
     />
     <Menu.Item
-      name="la carne"
+      name="carne"
       active={items.type === 'carne'}
       onClick={() => {
         setItems(

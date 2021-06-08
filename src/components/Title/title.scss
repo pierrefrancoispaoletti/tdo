@@ -3,3 +3,47 @@
 .buttonItems {
   background-color: $text-color !important;
 }
+
+.pulse {
+  animation: pulse 1s linear infinite;
+}
+
+
+.buttonItems:active {
+  animation: menurotation 0.5s;
+}
+
+.menuReverse {
+  animation: pulse 1s linear infinite;
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes menurotation {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(180deg) scale(1.2);
+  }
+}
+
+@keyframes menurotationreverse {
+  from {
+    transform: rotate(-180deg) scale(1) ;
+  }
+  to {
+    transform: rotate(0deg) scale(1.2);
+  }
+}

@@ -1,31 +1,10 @@
-:root {
-  --cheese: #F7C946;
-  --tomato: #D84B2A;
-  --crust: #D19952;
-  --peperoni: #A2371D;
-  --olive: #1D1D1D;
 
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Raleway';
-  background-color: transparent;
-}
 
 p {
-  margin-top: 2vh;
-  text-transform: capitalize;
-  font-size: 20px;
+  margin: 2vh;
+  font-size: 18px;
   text-align: center;
-  color: rgb(255, 113, 113);
   font-weight: 600;
-  text-shadow: 1px 1px black;
 }
 
 .box {

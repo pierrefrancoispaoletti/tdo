@@ -1,35 +1,54 @@
 import React from 'react';
-import {
-  Container, Divider, Grid, GridColumn, GridRow, Header, Image,
-} from 'semantic-ui-react';
-import pizza from './pizza.jpeg';
-
 import '../../styles/items.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
+import { Divider } from 'semantic-ui-react';
+import Links from '../../datas/links';
+import divider from './T7.png';
+import './main.scss';
+import ItemTitle from '../Items/ItemTitle/ItemTitle';
 
 const Main = () => (
-  <Container>
-    <Header as="h1" textAlign="center" className="foodItems main__title">
-      Le temps des Oliviers
-    </Header>
-    <Divider />
-    <Grid columns={2} divided stackable>
-      <GridRow>
-        <GridColumn>
-          <Container as="span" className="foodItems">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos dolore
-            possimus ex accusamus, perspiciatis nulla error pariatur unde neque non et.
-            Officia ut accusamus ad recusandae! Cupiditate assumenda saepe eaque
-            accusamus aspernatur neque labore magnam dicta? Temporibus
-            quae voluptatibus explicabo quis illum earum debitis sapiente
-            placeat, sint consequuntur rerum voluptate.
-          </Container>
-        </GridColumn>
-        <GridColumn>
-          <Image src={pizza} />
-        </GridColumn>
-      </GridRow>
-    </Grid>
-  </Container>
+  <>
+    <ItemTitle title="Le Temps des Oliviers" />
+    <Divider hidden />
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        margin: '2vh 2vw',
+      }}
+    >
+      <img height="10px" src={divider} alt="" />
+    </div>
+    <div className="main">
+      {Links.map((link) => (
+        <Link to={link.slug}>
+          <button type="button" className="icons">
+            <div className="header">
+              <FontAwesomeIcon icon={link.icon} size="3x" color="white" />
+            </div>
+            <span
+              style={{
+                fontFamily: 'Poppins-ExtraBold',
+                textTransform: 'uppercase',
+                fontSize: '0.8em',
+                textAlign: 'center',
+                display: 'inline-block',
+                padding: '4px',
+                border: '1px solid transparent',
+                borderRadius: '12px',
+                color: 'black',
+                background: '#efdfc6',
+              }}
+            >
+              {link.name}
+            </span>
+          </button>
+        </Link>
+      ))}
+    </div>
+  </>
 );
 
 export default Main;

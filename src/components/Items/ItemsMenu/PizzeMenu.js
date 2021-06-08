@@ -16,7 +16,7 @@ const PizzeMenu = ({
       }}
     />
     <Menu.Item
-      name="Les crèatives"
+      name="crèatives"
       active={categories === 'les créatives'}
       onClick={() => {
         setCategories('Les créatives');
@@ -24,7 +24,7 @@ const PizzeMenu = ({
       }}
     />
     <Menu.Item
-      name="les classiques"
+      name="classiques"
       active={categories === 'Les classiques'}
       onClick={() => {
         setCategories('Les classiques');

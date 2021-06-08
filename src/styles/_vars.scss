@@ -1,5 +1,20 @@
-$bg-color: #090A02;
+$bg-color: #656439;
 
-$button-color: #D8CDA0;
+$button-color: #d8cda0;
 
-$text-color: #D8CDA0;
+$text-color: white;
+
+@font-face {
+  font-family: "Aesthete";
+  src: local("Aesthete"), url("../fonts/Aesthete.ttf");
+}
+
+@font-face {
+    font-family: "Poppins-ExtraBold";
+    src: local("Poppins-ExtraBold"), url("../fonts/Poppins-ExtraBold.ttf");
+}
+
+@font-face {
+    font-family: "Poppins-Light";
+    src: local("Poppins-Light"), url("../fonts/Poppins-Light.ttf");
+}

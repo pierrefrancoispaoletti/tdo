@@ -2,16 +2,16 @@ import Axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Container,
-  Divider,
-  Grid,
-  Transition,
+  Container, Divider, Transition,
 } from 'semantic-ui-react';
 import ItemTitle from '../ItemTitle/ItemTitle';
 import LoaderComponent from '../../Loader/Loader';
 import ItemComponent from '../ItemComponent/ItemComponent';
 import {
-  antipastiReq, carneReq, pastaReq, tagliateReq,
+  antipastiReq,
+  carneReq,
+  pastaReq,
+  tagliateReq,
 } from '../../../utils/axiosCalls';
 
 const Cuisine = ({ title, MenuComponent }) => {
@@ -26,12 +26,7 @@ const Cuisine = ({ title, MenuComponent }) => {
   useEffect(() => {
     setMounted(true);
     setLoading(true);
-    Axios.all([
-      tagliateReq,
-      pastaReq,
-      antipastiReq,
-      carneReq,
-    ]).then(
+    Axios.all([tagliateReq, pastaReq, antipastiReq, carneReq]).then(
       Axios.spread((...responses) => {
         if (!mounted) {
           setTagliate(responses[0].data);
@@ -39,6 +34,7 @@ const Cuisine = ({ title, MenuComponent }) => {
           setAntipasti(responses[2].data);
           setCarne(responses[3].data);
           setLoading(false);
+          // par defaut on set les antipastis
           setItems(responses[2].data);
         }
       }),
@@ -48,11 +44,7 @@ const Cuisine = ({ title, MenuComponent }) => {
     };
   }, []);
   return (
-    <Transition
-      visible={mounted}
-      animation="fly left"
-      duration={1000}
-    >
+    <Transition visible={mounted} animation="fly left" duration={1000}>
       <Container>
         <ItemTitle title={title} />
         <Divider />
@@ -65,13 +57,13 @@ const Cuisine = ({ title, MenuComponent }) => {
           carne={carne}
         />
         <Divider />
-        {loading === true && <LoaderComponent />}
-        {loading === false && (
-        <Grid columns={2}>
-          {items.map((item) => (
-            <ItemComponent key={item.id} item={item} />
-          ))}
-        </Grid>
+        {loading && <LoaderComponent />}
+        {!loading && (
+          <div>
+            {items.map((item) => (
+              <ItemComponent key={item.id} item={item} />
+            ))}
+          </div>
         )}
       </Container>
     </Transition>

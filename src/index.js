@@ -5,6 +5,7 @@ import { render } from 'react-dom';
 // == Import : local
 import 'semantic-ui-css/semantic.min.css';
 import './styles/index.scss';
+import './fonts/Aesthete.ttf';
 // Composants
 import { HashRouter as Router } from 'react-router-dom';
 import App from './components/App';

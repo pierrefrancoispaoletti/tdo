@@ -6,7 +6,7 @@ import { filterObjectsByCategory } from '../../../utils/utils';
 const BoissonsMenu = ({
   items, categories, setItemsByCategory, setCategories,
 }) => (
-  <Menu size="mini" compact widths={5} className="menu__categories">
+  <Menu size="mini" widths={5} className="menu__categories">
     <Menu.Item
       name="toutes"
       active={categories === ''}

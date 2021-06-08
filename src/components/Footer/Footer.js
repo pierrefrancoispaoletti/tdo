@@ -1,12 +1,18 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
 import {
   Container,
   Divider,
-  Grid, GridColumn, GridRow, List,
+  Grid,
+  GridColumn,
+  GridRow,
+  List,
 } from 'semantic-ui-react';
 
 import './footer.scss';
 import '../../styles/items.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => (
   <Container className="footer__container">
@@ -15,13 +21,14 @@ const Footer = () => (
         <GridColumn>
           <List>
             <List.Item>
-              <List.Header className="footer__container__header main__title">
+              <List.Header className="footer__container__header main__title itemtitle">
                 Contact
               </List.Header>
-              <Divider />
-              <List.Icon name="mail" color="teal" />
+              <Divider hidden />
               <List.Content>
-                <a href="mailto:vava@tdo.fr">Vava@tdo.fr</a>
+                <a href="mailto:vannina.giorgi@hotmail.fr">
+                  <FontAwesomeIcon icon={faEnvelope} size="2x" />
+                </a>
               </List.Content>
             </List.Item>
           </List>
@@ -29,13 +36,25 @@ const Footer = () => (
         <GridColumn>
           <List>
             <List.Item>
-              <List.Header className="footer__container__header main__title">
+              <List.Header className="footer__container__header main__title itemtitle">
                 Suivez nous
               </List.Header>
-              <Divider />
+              <Divider hidden />
               <List.Content floated="right">
-                <List.Icon name="facebook" color="blue" size="big" link />
-                <List.Icon name="instagram" color="purple" size="big" link />
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.facebook.com/TDO-le-temps-des-oliviers-128901417192735"
+                >
+                  <List.Icon name="facebook" color="blue" size="big" link />
+                </a>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.instagram.com/le_temps_des_oliviers/?hl=fr"
+                >
+                  <List.Icon name="instagram" color="purple" size="big" link />
+                </a>
               </List.Content>
             </List.Item>
           </List>
@@ -43,7 +62,10 @@ const Footer = () => (
       </GridRow>
     </Grid>
     <Grid>
-      <GridRow className="footer__container__header" centered> ©opyright Le Temps des Oliviers</GridRow>
+      <GridRow className="footer__container__header" centered>
+        {' '}
+        ©opyright Le Temps des Oliviers
+      </GridRow>
     </Grid>
   </Container>
 );
